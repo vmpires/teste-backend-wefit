@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE `Usuario` MODIFY `criadoEm` DATETIME(3) NULL DEFAULT CURRENT_TIMESTAMP(3),
+    MODIFY `atualizadoEm` DATETIME(3) NULL;
