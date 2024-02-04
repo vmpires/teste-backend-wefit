@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import registroRouter from './routes/registro';
 
 const app = express();
-const port = process.env.PORT || 4568;
+const port = process.env.NODE_PORT || 4568;
 
 app.use(bodyParser.json());
 

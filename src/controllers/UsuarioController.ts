@@ -11,8 +11,10 @@ export const registrar = async (req: Request, res: Response) => {
   } catch (errors: any) {
     if (errors.meta) {
       res.status(422).json({ Erro: "Email já registrado" });
-    } else {
+    } else if (errors.issues) {
       res.status(422).json({ Erros: errors.issues.map((error: any) => error.message) });
+    } else {
+      res.status(500).json({ Erro: errors });
     }
   }
 };
