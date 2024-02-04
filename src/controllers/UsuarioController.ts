@@ -10,8 +10,10 @@ export const registrar = async (req: Request, res: Response) => {
     res.status(201).json(resultado);
   } catch (errors: any) {
     if (errors.meta) {
+      console.log("Erro ao tentar criar usuário: email já registrado")
       res.status(422).json({ Erro: "Email já registrado" });
     } else if (errors.issues) {
+      console.log(`Erro ao tentar criar usuário: ${errors.issues.map((error: any) => error.message)}`)
       res.status(422).json({ Erros: errors.issues.map((error: any) => error.message) });
     } else {
       res.status(500).json({ Erro: errors });
