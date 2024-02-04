@@ -6,8 +6,8 @@ export interface Usuario {
   tipoDeEntidade: 'FISICA' | 'JURIDICA';
   numeroDocumento: string;
   nome: string;
-  celular: number;
-  telefone?: number;
+  celular: string;
+  telefone?: string;
   email: string;
   confirmacaoEmail: string;
   cep: string;
@@ -17,8 +17,6 @@ export interface Usuario {
   bairro: string;
   estado: string;
   aceiteTermosDeUso: boolean;
-  criadoEm?: Date | string;
-  atualizadoEm?: Date | string;
 }
 
 export const criarUsuario = async (usuario: Usuario) => {

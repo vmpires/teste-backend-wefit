@@ -12,8 +12,8 @@ model Usuario {
   tipoDeEntidade TipoDeEntidade
   numeroDocumento String
   nome String
-  celular Int
-  telefone Int?
+  celular String
+  telefone String?
   email String @unique
   confirmacaoEmail String
   cep String
